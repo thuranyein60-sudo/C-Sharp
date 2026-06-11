@@ -1,0 +1,8 @@
+<FileList>
+  <File Reference="Esri.ArcGISRuntime.WPF.dll">
+    <ToolboxItems VSCategory="ArcGIS Maps SDK" BlendCategory="ArcGIS Maps SDK">
+      <Item Type="Esri.ArcGISRuntime.UI.Controls.MapView" />
+      <Item Type="Esri.ArcGISRuntime.UI.Controls.SceneView" />
+    </ToolboxItems>
+  </File>
+</FileList>
