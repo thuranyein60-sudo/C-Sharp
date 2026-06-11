@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <Target Name="AGSRuntimeTFMCheck" BeforeTargets="ResolveAssemblyReferences;Build;Rebuild" Condition="'$(DisableAGSRuntimeTFMCheck)'!='true'">
+        <Error Text = "The 'Esri.ArcGISRuntime' nuget package cannot be used to target Xamarin.Android. Target net9.0-android instead." />
+    </Target>
+  
+</Project>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <Target Name="AGSTPMinVCheck" BeforeTargets="ResolveAssemblyReferences;Build;Rebuild" Condition="'$(TargetPlatformMinVersion)' != ''">
+    <PropertyGroup>
+      <AGS_RequiredTPMinV>10.0.19041.0</AGS_RequiredTPMinV>
+      <AGS_ActualTPMinV>$(TargetPlatformMinVersion)</AGS_ActualTPMinV>
+    </PropertyGroup>
+    <Error
+        Condition=" '$([System.Version]::Parse($(AGS_ActualTPMinV)).CompareTo($([System.Version]::Parse($(AGS_RequiredTPMinV)))))' == '-1' "
+        Text = "The 'Esri.ArcGISRuntime' cannot be used in the $(MSBuildProjectName) project since the project's TargetPlatformMinVersion ($(AGS_ActualTPMinV)) does not match the Minimum Version ($(AGS_RequiredTPMinV)) supported by the package" />
+  </Target>
+  
+  <Target Name="AGSTPVCheck" BeforeTargets="ResolveAssemblyReferences;Build;Rebuild" Condition="'$(TargetPlatformVersion)' != ''">
+    <PropertyGroup>
+      <AGS_RequiredTPV>10.0.19041.0</AGS_RequiredTPV>
+      <AGS_ActualTPV>$(TargetPlatformVersion)</AGS_ActualTPV>
+    </PropertyGroup>
+    <Error
+        Condition=" '$([System.Version]::Parse($(AGS_ActualTPV)).CompareTo($([System.Version]::Parse($(AGS_RequiredTPV)))))' == '-1' "
+        Text = "The 'Esri.ArcGISRuntime' cannot be used in the $(MSBuildProjectName) project since the project's TargetPlatformVersion ($(AGS_ActualTPV)) does not match the required target version ($(AGS_RequiredTPV)) supported by the package" />
+  </Target>
+
+  <!-- Ensure only architectures supported by the runtime is selected -->
+  <Target Name="AGSArchitectureCheck" BeforeTargets="Build;ReBuild" Condition="'$(PlatformTarget)' != ''">
+    <Error
+        Condition=" '$(PlatformTarget)' != 'ARM64' and '$(PlatformTarget)' != 'x86' and '$(PlatformTarget)' != 'x64' and '$(PlatformTarget)' != 'AnyCPU' "
+        Text = "The 'Esri.ArcGISRuntime' nuget package cannot be used to target the '$(PlatformTarget)' architecture." />
+  </Target>
+
+  <ItemGroup Condition="'$(DesignTimeBuild)' != 'true' AND '$(DeployArcGISNetworkAnalystResources)'!='false' AND '$(OutputType)'=='AppContainerExe'">
+    <Content Include="$(MSBuildThisFileDirectory)..\..\resources\network_analyst\strings.bin" Visible="false">
+      <Link>RuntimeCoreNet\resources\network_analyst\strings.bin</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>
