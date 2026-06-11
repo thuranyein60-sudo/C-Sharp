@@ -1,0 +1,1370 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Esri.ArcGISRuntime.Toolkit</name>
+    </assembly>
+    <members>
+        <member name="T:System.Diagnostics.CodeAnalysis.AllowNullAttribute">
+            <summary>Specifies that null is allowed as an input even if the corresponding type disallows it.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.DisallowNullAttribute">
+            <summary>Specifies that null is disallowed as an input even if the corresponding type allows it.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.MaybeNullAttribute">
+            <summary>Specifies that an output may be null even if the corresponding type disallows it.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.NotNullAttribute">
+            <summary>Specifies that an output will not be null even if the corresponding type allows it. Specifies that an input argument was not null when the call returns.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute">
+            <summary>Specifies that when a method returns <see cref="P:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute.ReturnValue"/>, the parameter may be null even if the corresponding type disallows it.</summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute.#ctor(System.Boolean)">
+            <summary>Initializes the attribute with the specified return value condition.</summary>
+            <param name="returnValue">
+            The return value condition. If the method returns this value, the associated parameter may be null.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute.ReturnValue">
+            <summary>Gets the return value condition.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute">
+            <summary>Specifies that when a method returns <see cref="P:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.ReturnValue"/>, the parameter will not be null even if the corresponding type allows it.</summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.#ctor(System.Boolean)">
+            <summary>Initializes the attribute with the specified return value condition.</summary>
+            <param name="returnValue">
+            The return value condition. If the method returns this value, the associated parameter will not be null.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.ReturnValue">
+            <summary>Gets the return value condition.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute">
+            <summary>Specifies that the output will be non-null if the named parameter is non-null.</summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute.#ctor(System.String)">
+            <summary>Initializes the attribute with the associated parameter name.</summary>
+            <param name="parameterName">
+            The associated parameter name.  The output will be non-null if the argument to the parameter specified is non-null.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute.ParameterName">
+            <summary>Gets the associated parameter name.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.DoesNotReturnAttribute">
+            <summary>Applied to a method that will never return under any circumstance.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute">
+            <summary>Specifies that the method will not return if the associated Boolean parameter is passed the specified value.</summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute.#ctor(System.Boolean)">
+            <summary>Initializes the attribute with the specified parameter value.</summary>
+            <param name="parameterValue">
+            The condition parameter value. Code after the method will be considered unreachable by diagnostics if the argument to
+            the associated parameter matches this value.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute.ParameterValue">
+            <summary>Gets the condition parameter value.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.MemberNotNullAttribute">
+            <summary>Specifies that the method or property will ensure that the listed field and property members have not-null values.</summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.MemberNotNullAttribute.#ctor(System.String)">
+            <summary>Initializes the attribute with a field or property member.</summary>
+            <param name="member">
+            The field or property member that is promised to be not-null.
+            </param>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.MemberNotNullAttribute.#ctor(System.String[])">
+            <summary>Initializes the attribute with the list of field and property members.</summary>
+            <param name="members">
+            The list of field and property members that are promised to be not-null.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.MemberNotNullAttribute.Members">
+            <summary>Gets field or property member names.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute">
+            <summary>Specifies that the method or property will ensure that the listed field and property members have not-null values when returning with the specified return value condition.</summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute.#ctor(System.Boolean,System.String)">
+            <summary>Initializes the attribute with the specified return value condition and a field or property member.</summary>
+            <param name="returnValue">
+            The return value condition. If the method returns this value, the associated parameter will not be null.
+            </param>
+            <param name="member">
+            The field or property member that is promised to be not-null.
+            </param>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute.#ctor(System.Boolean,System.String[])">
+            <summary>Initializes the attribute with the specified return value condition and list of field and property members.</summary>
+            <param name="returnValue">
+            The return value condition. If the method returns this value, the associated parameter will not be null.
+            </param>
+            <param name="members">
+            The list of field and property members that are promised to be not-null.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute.ReturnValue">
+            <summary>Gets the return value condition.</summary>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute.Members">
+            <summary>Gets field or property member names.</summary>
+        </member>
+        <member name="T:Esri.ArcGISRuntime.Toolkit.UI.LoopMode">
+            <summary>
+            Specifies the loop behavior of temporal playback.
+            </summary>
+        </member>
+        <member name="F:Esri.ArcGISRuntime.Toolkit.UI.LoopMode.None">
+            <summary>
+            Specifies that playback should not loop when the bounds of the temporal extent are reached
+            </summary>
+        </member>
+        <member name="F:Esri.ArcGISRuntime.Toolkit.UI.LoopMode.Repeat">
+            <summary>
+            Specifies that temporal playback should repeat when the bounds of the temporal extent are reached
+            </summary>
+        </member>
+        <member name="F:Esri.ArcGISRuntime.Toolkit.UI.LoopMode.Reverse">
+            <summary>
+            Specifies that temporal playback should reverse direction when the bounds of the temporal extent are reached
+            </summary>
+        </member>
+        <member name="T:Esri.ArcGISRuntime.Toolkit.UI.PlaybackDirection">
+            <summary>
+            Specifies the direction of temporal playback.
+            </summary>
+        </member>
+        <member name="F:Esri.ArcGISRuntime.Toolkit.UI.PlaybackDirection.Forward">
+            <summary>
+            Specifies that playback advances forward in time
+            </summary>
+        </member>
+        <member name="F:Esri.ArcGISRuntime.Toolkit.UI.PlaybackDirection.Backward">
+            <summary>
+            Specifies that playback moves backward in time
+            </summary>
+        </member>
+        <member name="T:Esri.ArcGISRuntime.Toolkit.UI.TimeExtentChangedEventArgs">
+            <summary>
+            Event arguments used when raising the TimeSlider.CurrentExtentChanged event.
+            </summary>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.TimeExtentChangedEventArgs.#ctor(Esri.ArcGISRuntime.TimeExtent,Esri.ArcGISRuntime.TimeExtent)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Esri.ArcGISRuntime.Toolkit.UI.TimeExtentChangedEventArgs"/> class.
+            </summary>
+            <param name="newExtent">The new <see cref="T:Esri.ArcGISRuntime.TimeExtent"/> value.</param>
+            <param name="oldExtent">The old <see cref="T:Esri.ArcGISRuntime.TimeExtent"/> value.</param>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.TimeExtentChangedEventArgs.NewExtent">
+            <summary>
+            Gets the new <see cref="T:Esri.ArcGISRuntime.TimeExtent"/> value.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.TimeExtentChangedEventArgs.OldExtent">
+            <summary>
+            Gets the old <see cref="T:Esri.ArcGISRuntime.TimeExtent"/> value.
+            </summary>
+        </member>
+        <member name="T:Esri.ArcGISRuntime.Toolkit.UI.TimeSliderLabelMode">
+            <summary>
+            Represents the display mode for time slider labels.
+            </summary>
+        </member>
+        <member name="F:Esri.ArcGISRuntime.Toolkit.UI.TimeSliderLabelMode.None">
+            <summary>
+            Display no labels along the time slider
+            </summary>
+        </member>
+        <member name="F:Esri.ArcGISRuntime.Toolkit.UI.TimeSliderLabelMode.CurrentExtent">
+            <summary>
+            Display labels for the time slider's current extent (i.e. on the slider's thumbs)
+            </summary>
+        </member>
+        <member name="F:Esri.ArcGISRuntime.Toolkit.UI.TimeSliderLabelMode.TimeStepInterval">
+            <summary>
+            Display labels for the time slider's time step intervals (i.e. on the slider's tick marks)
+            </summary>
+        </member>
+        <member name="T:Esri.ArcGISRuntime.Toolkit.UI.LegendEntry">
+            <summary>
+            Class used to represent an entry in the Legend control.
+            </summary>
+            <remarks>
+            The <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.LegendEntry.Content"/> property will contain the actual object it represents, mainly <see cref="T:Esri.ArcGISRuntime.Mapping.Layer"/>, <see cref="T:Esri.ArcGISRuntime.Mapping.ILayerContent"/> or <see cref="T:Esri.ArcGISRuntime.Mapping.LegendInfo"/>.
+            </remarks>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.LegendEntry.#ctor(System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Esri.ArcGISRuntime.Toolkit.UI.LegendEntry"/> class.
+            </summary>
+            <param name="content">The object this entry represents, usually a <see cref="T:Esri.ArcGISRuntime.Mapping.Layer"/>, <see cref="T:Esri.ArcGISRuntime.Mapping.ILayerContent"/> or <see cref="T:Esri.ArcGISRuntime.Mapping.LegendInfo"/>.</param>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.LegendEntry.Content">
+            <summary>
+            Gets the content that this entry represents, usually a <see cref="T:Esri.ArcGISRuntime.Mapping.Layer"/>, <see cref="T:Esri.ArcGISRuntime.Mapping.ILayerContent"/> or <see cref="T:Esri.ArcGISRuntime.Mapping.LegendInfo"/>.
+            </summary>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.LegendEntry.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.LegendEntry.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="T:Esri.ArcGISRuntime.Toolkit.UI.ILayerContentItem">
+            <summary>
+            Internal use only.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.ILayerContentItem.Content">
+            <summary>
+            Gets the layer content this item encapsulates.
+            </summary>
+        </member>
+        <member name="T:Esri.ArcGISRuntime.Toolkit.UI.BasemapGalleryViewStyle">
+            <summary>
+            The view style of a basemap gallery.
+            </summary>
+        </member>
+        <member name="F:Esri.ArcGISRuntime.Toolkit.UI.BasemapGalleryViewStyle.Automatic">
+            <summary>
+            Display a grid when there is enough width to support that, otherwise display a list.
+            </summary>
+        </member>
+        <member name="F:Esri.ArcGISRuntime.Toolkit.UI.BasemapGalleryViewStyle.Grid">
+            <summary>
+            Always display a grid.
+            </summary>
+        </member>
+        <member name="F:Esri.ArcGISRuntime.Toolkit.UI.BasemapGalleryViewStyle.List">
+            <summary>
+            Always display a list.
+            </summary>
+        </member>
+        <member name="T:Esri.ArcGISRuntime.Toolkit.UI.BasemapGalleryItem">
+            <summary>
+            Encompasses an element in a basemap gallery.
+            </summary>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.BasemapGalleryItem.#ctor(Esri.ArcGISRuntime.Mapping.Basemap)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Esri.ArcGISRuntime.Toolkit.UI.BasemapGalleryItem"/> class.
+            </summary>
+            <param name="basemap">Basemap for this gallery item. Must be not null and loaded.</param>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.BasemapGalleryItem.CreateAsync(Esri.ArcGISRuntime.Mapping.Basemap)">
+            <summary>
+            Creates an item to represent the given basemap.
+            </summary>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.BasemapGalleryItem.LoadAsync">
+            <summary>
+            Loads the basemap and other properties.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.BasemapGalleryItem.SpatialReference">
+            <summary>
+            Gets the spatial reference, if known, of the underlying basemap.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.BasemapGalleryItem.ThumbnailData">
+            <summary>
+            Gets thumbnail as a byte array.
+            </summary>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.BasemapGalleryItem.Equals(Esri.ArcGISRuntime.Toolkit.UI.BasemapGalleryItem)">
+            <inheritdoc />
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.BasemapGalleryItem.EqualsBasemap(Esri.ArcGISRuntime.Mapping.Basemap)">
+            <summary>
+            Returns true if the other basemap is equal to this item's underlying basemap.
+            </summary>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.BasemapGalleryItem.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.BasemapGalleryItem.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.BasemapGalleryItem.IsValid">
+            <summary>
+            Gets a value indicating whether this basemap is a valid selection.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.BasemapGalleryItem.Basemap">
+            <summary>
+            Gets the basemap associated with this basemap item.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.BasemapGalleryItem.Thumbnail">
+            <summary>
+            Gets or sets the thumbnail to display for this basemap item.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.BasemapGalleryItem.Tooltip">
+            <summary>
+            Gets or sets the tooltip to display for this basemap item.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.BasemapGalleryItem.Name">
+            <summary>
+            Gets or sets the name to display for this basemap item.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.BasemapGalleryItem.IsLoading">
+            <summary>
+            Gets or sets a value indicating whether this gallery item is actively loading the basemap.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.BasemapGalleryItem.IsLoadingThumbnail">
+            <summary>
+            Gets or sets a value indicating whether this gallery item is actively loading the <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.BasemapGalleryItem.Thumbnail"/>.
+            </summary>
+        </member>
+        <member name="E:Esri.ArcGISRuntime.Toolkit.UI.BasemapGalleryItem.PropertyChanged">
+            <inheritdoc/>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.BasemapGalleryController.BasemapIsActuallyNotABasemap(Esri.ArcGISRuntime.Mapping.Basemap)">
+            <summary>
+            Maps and scenes start with an empty basemap that should not be shown in the UI.
+            </summary>
+        </member>
+        <member name="T:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel">
+            <summary>
+            Backing controller for a search experience, intended for use with SearchView.
+            SearchView supports searching, with search-as-you-type for multiple search providers via <see cref="T:Esri.ArcGISRuntime.Toolkit.UI.Controls.ISearchSource"/>.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.ActiveSource">
+            <summary>
+            Gets or sets the active search source, if one is selected. If there is no selection, all sources will be used for the search.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.IsSearchInProgress">
+            <summary>
+            Gets a value indicating whether a search operation is in progress.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.IsSuggestInProgress">
+            <summary>
+            Gets a value indicating whether a suggestion request is in progress.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.IsWaiting">
+            <summary>
+            Gets a value indicating whether a waiting operation (search, suggestion) is in progress.
+            </summary>
+            <remarks>
+            This can be used to implement activity indicator or progress bar display.
+            </remarks>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.SelectedResult">
+            <summary>
+            Gets or sets the selected search result.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.CurrentQuery">
+            <summary>
+            Gets or sets the current query.
+            </summary>
+            <remarks>
+            Call <see cref="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.UpdateSuggestions"/> to refresh suggestions after updating the query.
+            </remarks>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.DefaultPlaceholder">
+            <summary>
+            Gets or sets the default placeholder to use when there is no <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.ActiveSource"/> or the <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.ActiveSource"/> does not have a placeholder defined.
+            Consumers should always display the <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.ActivePlaceholder"/> in the UI, rather than accessing this property directly.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.ActivePlaceholder">
+            <summary>
+            Gets the correct placeholder to display in the UI.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.SearchMode">
+            <summary>
+            Gets or sets the search mode, which defaults to <see cref="F:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchResultMode.Automatic"/>.
+            This mode controls how many results are displayed when a search is performed.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.QueryArea">
+            <summary>
+            Gets or sets the query area to use when searching and getting suggestions.
+            When used in conjunction with a GeoView, this property should be set every time navigation completes,
+            to enable automatic update of the <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.IsEligibleForRequery"/> property.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.QueryCenter">
+            <summary>
+            Gets or sets the center point around which results should be returned.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.IgnoreAreaChangesFlag">
+            <summary>
+            Gets or sets a value indicating whether changes to the query area should be ignored. This is used to prevent <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.IsEligibleForRequery"/> becoming true because the view zoomed to a result.
+            </summary>
+            <remarks>
+            Set this value to true when the GeoView is being navigated to show results, and set to false when the navigation completes.
+            </remarks>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.Sources">
+            <summary>
+            Gets or sets the list of available search sources, which can be updated dynamically.
+            </summary>
+            <remarks>See <see cref="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.ConfigureDefaultWorldGeocoder(System.Threading.CancellationToken)"/> for a convenient method to populate this collection automatically.</remarks>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.Results">
+            <summary>
+            Gets the list of search results for the most-recently completed query.
+            Clearing a search via <see cref="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.ClearSearch"/> will set this collection to <c>null</c>.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.Suggestions">
+            <summary>
+            Gets the list of search suggestions. This value is set after calls to <see cref="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.UpdateSuggestions"/>.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.IsEligibleForRequery">
+            <summary>
+            Gets a value indicating whether spatial parameters have changed enough to justify displaying a 'Repeat Search Here' button.
+            </summary>
+            <remarks>
+            'Repeat Search Here' is a common pattern in applications that return multiple search results.
+            </remarks>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.CommitSearch">
+            <summary>
+            Submits the current query as a fresh search.
+            </summary>
+            <remarks>
+            The search will return results from the <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.ActiveSource"/> or all <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.Sources"/> if <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.ActiveSource"/> is <c>null</c>.
+            Search in progress can be cancelled by calling <see cref="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.CancelSearch"/>.
+            </remarks>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.RepeatSearchHere">
+            <summary>
+            Repeats the current search, with results confined to the area defined by <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.QueryArea"/>.
+            </summary>
+            <remarks>
+            This is used to allow users to narrow down search results using a geographic constraint.
+            This is especially useful when a search results in multiple results.
+            </remarks>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.UpdateSuggestions">
+            <summary>
+            Updates <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.Suggestions"/> for the current query.
+            </summary>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.AcceptSuggestion(Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchSuggestion)">
+            <summary>
+            Initiates a search using a suggestion as the query.
+            </summary>
+            <param name="suggestion">A suggestion from <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.Suggestions"/> to be used as basis for the search.</param>
+            <remarks>This will update <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.CurrentQuery"/> to match the selected suggestion.</remarks>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.PrepareForNewSearch">
+            <summary>
+            Cancels any previous operations, clears results, and gets ready for a new search.
+            </summary>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.ClearSearch">
+            <summary>
+            Cancels any active search/suggest tasks, then clears all results and the current query.
+            </summary>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.CancelSearch">
+            <summary>
+            Cancels any active search task.
+            </summary>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.CancelSuggestion">
+            <summary>
+            Cancels any active suggest task.
+            </summary>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.ConfigureDefaultWorldGeocoder(System.Threading.CancellationToken)">
+            <summary>
+            Configures the viewmodel with a search source optimized for use with the Esri World Geocoder service.
+            </summary>
+            <param name="token">Token used for cancellation.</param>
+        </member>
+        <member name="E:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel.PropertyChanged">
+            <inheritdoc/>
+        </member>
+        <member name="T:Esri.ArcGISRuntime.Toolkit.UI.Controls.ISearchSource">
+            <summary>
+            Defines the API contract for sources of search results that can be used with <see cref="T:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel"/>.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.ISearchSource.DisplayName">
+            <summary>
+            Gets or sets the display name for the source, which may be displayed in the UI.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.ISearchSource.Placeholder">
+            <summary>
+            Gets or sets the placeholder used for this source, which may be displaye in the UI.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.ISearchSource.DefaultCalloutDefinition">
+            <summary>
+            Gets or sets the callout definition used for results by default.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.ISearchSource.DefaultSymbol">
+            <summary>
+            Gets or sets the symbol to be used for results by default.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.ISearchSource.DefaultZoomScale">
+            <summary>
+            Gets or sets the default zoom scale to be used for results from this source.</summary>
+            <remarks>This value should be ignored when the underlying provider (e.g. LocatorTask) provides a viewpoint.
+            Otherwise this zoom scale should be used to create the viewpoint for point results.
+            </remarks>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.ISearchSource.MaximumResults">
+            <summary>
+            Gets or sets the maximum number of results to return when completing a search.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.ISearchSource.MaximumSuggestions">
+            <summary>
+            Gets or sets the maximum number of results to return when requesting search suggestions.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.ISearchSource.SearchArea">
+            <summary>
+            Gets or sets the area to be used as a constraint for searches and suggestions.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.ISearchSource.PreferredSearchLocation">
+            <summary>
+            Gets or sets the point to be used as an input to searches and suggestions.
+            </summary>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.ISearchSource.SuggestAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets a list of suggestions for the given query.
+            </summary>
+            <param name="queryString">Text of the query.</param>
+            <param name="cancellationToken">Token used to cancel requests (e.g. because the search text has changed).</param>
+            <returns>Task returning a list of suggestions.</returns>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.ISearchSource.SearchAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets a list of search results for the given query.
+            </summary>
+            <param name="queryString">Text of the query.</param>
+            <param name="cancellationToken">Token used to cancel requests (e.g. because the search was changed or canceled).</param>
+            <returns>Task returning list of search results.</returns>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.ISearchSource.SearchAsync(Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchSuggestion,System.Threading.CancellationToken)">
+            <summary>
+            Gets a list of search results for the given suggestions.
+            </summary>
+            <param name="suggestion">Suggestion to use for the search.</param>
+            <param name="cancellationToken">Token used to cancel searches.</param>
+            <returns>Task returning a list of results.</returns>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.ISearchSource.RepeatSearchAsync(System.String,Esri.ArcGISRuntime.Geometry.Envelope,System.Threading.CancellationToken)">
+            <summary>
+            Repeats the last search, with results restricted to the current visible area.
+            </summary>
+            <param name="queryString">Text to be used for the query.</param>
+            <param name="queryExtent">Extent used to limit the results.</param>
+            <param name="cancellationToken">Token used to cancel search.</param>
+            <returns>Task returning a list of results.</returns>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.ISearchSource.NotifySelected(Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchResult)">
+            <summary>
+            Used to notify the source when the <see cref="T:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel"/> has selected a result.
+            </summary>
+            <remarks>This can be used to implement custom selection behavior (e.g. when using a <see cref="T:Esri.ArcGISRuntime.Mapping.FeatureLayer"/>).</remarks>
+            <param name="result">The given search result.</param>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.ISearchSource.NotifyDeselected(Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchResult)">
+            <summary>
+            Used to notify the source when the <see cref="T:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchViewModel"/> has deselected a result, or all results if <paramref name="result"/> is null.
+            </summary>
+            <remarks>This can be used to implement custom selection behavior (e.g. when using a <see cref="T:Esri.ArcGISRuntime.Mapping.FeatureLayer"/>).</remarks>
+            <param name="result">The result that has been deselected.</param>
+        </member>
+        <member name="T:Esri.ArcGISRuntime.Toolkit.UI.Controls.LocatorSearchSource">
+            <summary>
+            Basic search source implementation for generic locators.
+            </summary>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.LocatorSearchSource.CreateDefaultSourceAsync(System.Threading.CancellationToken)">
+            <summary>
+            Creates a <see cref="T:Esri.ArcGISRuntime.Toolkit.UI.Controls.LocatorSearchSource"/> configured for use with the Esri World Geocoder service.
+            </summary>
+            <param name="cancellationToken">Token used for cancellation.</param>
+            <remarks>This method will re-use a static LocatorTask instance to improve performance.</remarks>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.LocatorSearchSource.LoadTask">
+            <summary>
+            Gets the task used to perform initial locator setup.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.LocatorSearchSource.DisplayName">
+            <summary>
+            Gets or sets the name of the locator. Defaults to the locator's name, or "locator" if not set.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.LocatorSearchSource.MaximumResults">
+            <summary>
+            Gets or sets the maximum number of results to return for a search. Default is 6.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.LocatorSearchSource.MaximumSuggestions">
+            <summary>
+            Gets or sets the maximum number of suggestions to return. Default is 6.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.LocatorSearchSource.GeocodeParameters">
+            <summary>
+            Gets the geocode parameters, which can be used to configure search behavior.
+            </summary>
+            <remarks>
+            <see cref="P:Esri.ArcGISRuntime.Tasks.Geocoding.GeocodeParameters.MaxResults"/>, <see cref="P:Esri.ArcGISRuntime.Tasks.Geocoding.GeocodeParameters.PreferredSearchLocation"/>,
+            and <see cref="P:Esri.ArcGISRuntime.Tasks.Geocoding.GeocodeParameters.SearchArea"/> are set by <see cref="T:Esri.ArcGISRuntime.Toolkit.UI.Controls.LocatorSearchSource"/> automatically on search.
+            <see cref="P:Esri.ArcGISRuntime.Tasks.Geocoding.GeocodeParameters.Categories"/> is set to <c>"*"</c> when the <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.LocatorSearchSource.Locator"/> is loaded for the first time.
+            </remarks>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.LocatorSearchSource.SuggestParameters">
+            <summary>
+            Gets the suggestion parameters, which can be used to configure suggestion behavior.
+            </summary>
+            <remarks>
+            <see cref="P:Esri.ArcGISRuntime.Tasks.Geocoding.SuggestParameters.MaxResults"/> and <see cref="P:Esri.ArcGISRuntime.Tasks.Geocoding.SuggestParameters.PreferredSearchLocation"/> are
+            set automatically on search.
+            </remarks>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.LocatorSearchSource.Locator">
+            <summary>
+            Gets the underlying locator.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.LocatorSearchSource.Placeholder">
+            <summary>
+            Gets or sets the placeholder to show when this search source is selected for use.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.LocatorSearchSource.DefaultCalloutDefinition">
+            <summary>
+            Gets or sets the default callout definition to use with results.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.LocatorSearchSource.DefaultSymbol">
+            <summary>
+            Gets or sets the default symbol to use when displaying results.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.LocatorSearchSource.DefaultZoomScale">
+            <inheritdoc />
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.LocatorSearchSource.SearchArea">
+            <inheritdoc />
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.LocatorSearchSource.PreferredSearchLocation">
+            <inheritdoc />
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.LocatorSearchSource.SubtitleAttributeKey">
+            <summary>
+            Gets or sets the attribute key to use as the subtitle when returning results. Key must be included in <see cref="P:Esri.ArcGISRuntime.Tasks.Geocoding.GeocodeParameters.ResultAttributeNames"/>.
+            </summary>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.LocatorSearchSource.#ctor(Esri.ArcGISRuntime.Tasks.Geocoding.LocatorTask)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Esri.ArcGISRuntime.Toolkit.UI.Controls.LocatorSearchSource"/> class.
+            <seealso cref="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.LocatorSearchSource.CreateDefaultSourceAsync(System.Threading.CancellationToken)"/> to create a source configured for use with the Esri World Geocoder.
+            </summary>
+            <param name="locator">Locator to be used.</param>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.LocatorSearchSource.NotifySelected(Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchResult)">
+            <summary>
+            This search source does not track selection state.
+            </summary>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.LocatorSearchSource.NotifyDeselected(Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchResult)">
+            <summary>
+            This search source does not track selection state.
+            </summary>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.LocatorSearchSource.SuggestAsync(System.String,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.LocatorSearchSource.SearchAsync(Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchSuggestion,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.LocatorSearchSource.SearchAsync(System.String,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.LocatorSearchSource.RepeatSearchAsync(System.String,Esri.ArcGISRuntime.Geometry.Envelope,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.LocatorSearchSource.ResultToSearchResult(System.Collections.Generic.IReadOnlyList{Esri.ArcGISRuntime.Tasks.Geocoding.GeocodeResult})">
+            <summary>
+            Converts geocode result list into list of results, applying result limits and calling necessary callbacks.
+            </summary>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.LocatorSearchSource.SuggestionToSearchSuggestion(System.Collections.Generic.IReadOnlyList{Esri.ArcGISRuntime.Tasks.Geocoding.SuggestResult})">
+            <summary>
+            Converts suggest result list into list of suggestions, applying result limits and calling necessary callbacks.
+            </summary>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.LocatorSearchSource.GeocodeResultToSearchResult(Esri.ArcGISRuntime.Tasks.Geocoding.GeocodeResult)">
+            <summary>
+            Creates a basic search result for the given geocode result.
+            </summary>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.LocatorSearchSource.SuggestResultToSearchSuggestion(Esri.ArcGISRuntime.Tasks.Geocoding.SuggestResult)">
+            <summary>
+            Creates a basic search suggestion for the given suggest result.
+            </summary>
+        </member>
+        <member name="T:Esri.ArcGISRuntime.Toolkit.UI.Controls.WorldGeocoderSearchSource">
+            <summary>
+            Search source intended for use with the World Geocode Service and similarly-configured geocode services.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.WorldGeocoderSearchSource.RepeatSearchResultThreshold">
+            <summary>
+            Gets or sets the minimum number of results to attempt to return.
+            If there are too few results, the search is repeated with loosened parameters until enough results are accumulated.
+            </summary>
+            <remarks>
+            If no search is successful, it is still possible to have a total number of results less than this threshold.
+            Does not apply to repeated search with area constraint.
+            Set to zero to disable search repeat behavior. Defaults to 1.
+            </remarks>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.WorldGeocoderSearchSource.RepeatSuggestResultThreshold">
+            <summary>
+            Gets or sets the minimum number of suggestions to attempt to return.
+            If there are too few suggestions, request is repeated with loosened constraints until enough suggestions are accumulated.
+            </summary>
+            <remarks>
+            If no search is successful, it is still possible to have a total number of results less than this threshold.
+            Does not apply to repeated search with area constraint.
+            Set to zero to disable search repeat behavior. Defaults to 6.
+            </remarks>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.WorldGeocoderSearchSource.ResultSymbolStyle">
+            <summary>
+            Gets or sets the web style used to find symbols for results.
+            When set, symbols are found for results based on the result's `Type` field, if available.
+            </summary>
+            <remarks>
+            Defaults to the style identified by the name "Esri2DPointSymbolsStyle".
+            The default Esri 2D point symbol has good results for many of the types returned by the world geocode service.
+            You can use this property to customize result icons by publishing a web style, taking care to ensure that symbol keys match the `Type` attribute returned by the locator.
+            </remarks>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.WorldGeocoderSearchSource.#ctor(Esri.ArcGISRuntime.Tasks.Geocoding.LocatorTask,Esri.ArcGISRuntime.Symbology.SymbolStyle)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Esri.ArcGISRuntime.Toolkit.UI.Controls.WorldGeocoderSearchSource"/> class.
+            </summary>
+            <param name="locator">Locator to use.</param>
+            <param name="style">Symbol style to use to find results.</param>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.WorldGeocoderSearchSource.SuggestionToSearchSuggestion(System.Collections.Generic.IReadOnlyList{Esri.ArcGISRuntime.Tasks.Geocoding.SuggestResult})">
+            <summary>
+            Converts suggest result list into list of suggestions, applying result limits and calling necessary callbacks.
+            </summary>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.WorldGeocoderSearchSource.SearchAsync(Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchSuggestion,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.WorldGeocoderSearchSource.SuggestResultToSearchSuggestion(Esri.ArcGISRuntime.Tasks.Geocoding.SuggestResult)">
+            <summary>
+            Creates a basic search suggestion for the given suggest result.
+            </summary>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.WorldGeocoderSearchSource.SuggestAsync(System.String,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.WorldGeocoderSearchSource.SearchAsync(System.String,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.WorldGeocoderSearchSource.RepeatSearchAsync(System.String,Esri.ArcGISRuntime.Geometry.Envelope,System.Threading.CancellationToken)">
+            <summary>
+            <inheritdoc />
+            </summary>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.WorldGeocoderSearchSource.ResultToSearchResult(System.Collections.Generic.IReadOnlyList{Esri.ArcGISRuntime.Tasks.Geocoding.GeocodeResult})">
+            <summary>
+            Converts geocode result list into list of results, applying result limits and calling necessary callbacks.
+            </summary>
+        </member>
+        <member name="T:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchResult">
+            <summary>
+            Wraps a search result for display.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchResult.DisplayTitle">
+            <summary>
+            Gets or sets the title that should be shown whenever the result is displayed.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchResult.DisplaySubtitle">
+            <summary>
+            Gets or sets the subtitle that should be shown whenever the result is displayed.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchResult.OwningSource">
+            <summary>
+            Gets the search source that created this result.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchResult.GeoElement">
+            <summary>
+            Gets or sets the optional GeoElement for the result. This could be a graphic for a locator search, a feature for a feature layer search, or null if there is nothing to display on the map.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchResult.SelectionViewpoint">
+            <summary>
+            Gets or sets the selection viewpoint for the result. Some search sources will return a viewpoint that should be used when a result is selected.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchResult.CalloutDefinition">
+            <summary>
+            Gets or sets the CalloutDefinition used to display the result.
+            </summary>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchResult.#ctor(System.String,System.String,Esri.ArcGISRuntime.Toolkit.UI.Controls.ISearchSource,Esri.ArcGISRuntime.Data.GeoElement,Esri.ArcGISRuntime.Mapping.Viewpoint)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchResult"/> class.
+            </summary>
+            <param name="title">Sets the <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchResult.DisplayTitle"/>.</param>
+            <param name="subtitle">Sets the <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchResult.DisplaySubtitle"/>.</param>
+            <param name="owner">Sets the <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchResult.OwningSource"/>.</param>
+            <param name="geoElement">Sets the <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchResult.GeoElement"/>.</param>
+            <param name="viewpoint">Sets the <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchResult.SelectionViewpoint"/>.</param>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchResult.MarkerImage">
+            <summary>
+            Gets the image displayed for this result.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchResult.MarkerImageData">
+            <summary>
+            Gets or sets the image displayed for this result, in a format useful for cross-platform scenarios.
+            </summary>
+        </member>
+        <member name="E:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchResult.PropertyChanged">
+            <inheritdoc/>
+        </member>
+        <member name="T:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchResultMode">
+            <summary>
+            Defines how many results should be returned by a search.
+            </summary>
+        </member>
+        <member name="F:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchResultMode.Single">
+            <summary>
+            Always try to return a single result.
+            </summary>
+        </member>
+        <member name="F:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchResultMode.Multiple">
+            <summary>
+            Always try to return multiple results.
+            </summary>
+        </member>
+        <member name="F:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchResultMode.Automatic">
+            <summary>
+            Try to make the right choice of single or multiple results based on context.
+            </summary>
+        </member>
+        <member name="T:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchSuggestion">
+            <summary>
+            Wraps a search suggestion for display.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchSuggestion.DisplayTitle">
+            <summary>
+            Gets or sets the title to use when displaying a suggestion.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchSuggestion.DisplaySubtitle">
+            <summary>
+            Gets or sets the optional subtitle that may be used when displaying a suggestion.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchSuggestion.IsCollection">
+            <summary>
+            Gets or sets a value indicating whether this result is for a collection (e.g. 'Coffee Shops') or a single result (e.g. 'Starbucks on Grand').
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchSuggestion.OwningSource">
+            <summary>
+            Gets the <see cref="T:Esri.ArcGISRuntime.Toolkit.UI.Controls.ISearchSource"/> that created this result.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchSuggestion.UnderlyingObject">
+            <summary>
+            Gets or sets any underlying object for the suggestion.
+            </summary>
+            <remarks>
+            This is helpful in cases where an underlying suggestion object is useful when completing a search. For example, when using a locator, the underlying <see cref="T:Esri.ArcGISRuntime.Tasks.Geocoding.SuggestResult"/> should be used when accepting the suggestion for a search.
+            </remarks>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchSuggestion.#ctor(System.String,Esri.ArcGISRuntime.Toolkit.UI.Controls.ISearchSource)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchSuggestion"/> class.
+            </summary>
+            <param name="title">Sets <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchSuggestion.DisplayTitle"/>.</param>
+            <param name="owner">Sets <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.SearchSuggestion.OwningSource"/>.</param>
+        </member>
+        <member name="T:Esri.ArcGISRuntime.Toolkit.UI.Controls.UtilityNetworkTraceCompletedEventArgs">
+            <summary>
+            Event argument used by <see cref="!:UtilityNetworkTraceTool.UtilityNetworkTraceCompleted"/> event.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.UtilityNetworkTraceCompletedEventArgs.Parameters">
+            <summary>
+            Gets the <see cref="T:Esri.ArcGISRuntime.UtilityNetworks.UtilityTraceParameters"/> used by trace.
+            </summary>
+            <value>The <see cref="T:Esri.ArcGISRuntime.UtilityNetworks.UtilityTraceParameters"/> used by trace.</value>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.UtilityNetworkTraceCompletedEventArgs.Results">
+            <summary>
+            Gets the <see cref="T:System.Collections.Generic.IEnumerable`1"/> returned by trace.
+            </summary>
+            <value>The <see cref="T:System.Collections.Generic.IEnumerable`1"/> returned by trace.</value>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.UtilityNetworkTraceCompletedEventArgs.Error">
+            <summary>
+            Gets the <see cref="T:System.Exception"/> raised by trace.
+            </summary>
+            <value>The <see cref="T:System.Exception"/> raised by trace.</value>
+        </member>
+        <member name="T:Esri.ArcGISRuntime.Toolkit.UI.Controls.UtilityNetworkChangedEventArgs">
+            <summary>
+            Event argument used by <see cref="!:UtilityNetworkTraceTool.UtilityNetworkChanged"/> event.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.UtilityNetworkChangedEventArgs.UtilityNetwork">
+            <summary>
+            Gets the new value for <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.UtilityNetworkChangedEventArgs.UtilityNetwork"/>.
+            </summary>
+            <value>The new value for <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.Controls.UtilityNetworkChangedEventArgs.UtilityNetwork"/>.</value>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.FloorFilterController.ShouldDisplayFloorPicker">
+            <summary>
+            Gets or sets a value indicating whether there is enough information to successfully display a FloorPicker.
+            Observe this to dynamically hide/show the view as needed.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.FloorFilterController.AllDisplayLevelsSelected">
+            <summary>
+            Gets a value indicating whether all levels should be visible simultaneously.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.FloorFilterController.ObservedViewpoint">
+            <summary>
+            Gets or sets the viewpoint observed from an associated MapView or SceneView.
+            Depending on configuration, setting this property will update selection.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.FloorFilterController.RequestedViewpoint">
+            <summary>
+            Gets the viewpoint requested by the floorfilter.
+            Observe this property to handle viewpoint changes driven by selection or manual zoom.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.FloorFilterController.SelectedSite">
+            <summary>
+            Gets the selected site. See <see cref="M:Esri.ArcGISRuntime.Toolkit.UI.FloorFilterController.SetSelectedSite(Esri.ArcGISRuntime.Mapping.Floor.FloorSite,System.Boolean)"/> to change this.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.FloorFilterController.SelectedLevel">
+            <summary>
+            Gets the selected level.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.FloorFilterController.DisplayLevels">
+            <summary>
+            Gets the levels for the currently selected facility. May be null or empty; not all facilites have levels.
+            This collection is displayed in a level/floor list.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.FloorFilterController.DisplayFacilities">
+            <summary>
+            Gets the facilities for the selected site. Can be null or empty; not all sites have facilities.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.FloorFilterController.AllFacilities">
+            <summary>
+            Gets all of the facilities in the floor manager, for all sites.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.FloorFilterController.AllSites">
+            <summary>
+            Gets all of the sites in the floor manager.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.FloorFilterController.SelectedFacility">
+            <summary>
+            Gets the selected facility.
+            If sites are present, the set facility must be part of the already-selected site. Callers must enforce this requirement, or controller will be left in an inconsistent state.
+            </summary>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.FloorFilterController.ForceZoomToSelection">
+            <summary>
+            Zoom to the current selection. Intended for use with an explicit "Zoom" button.
+            </summary>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.FloorFilterController.ZoomToSelection(Esri.ArcGISRuntime.Mapping.Floor.FloorFacility,System.Boolean)">
+            <summary>
+            Zoom to the new selection when appropriate. Intended for use with automatic zooming behavior (e.g. automatic zoom to selected facility).
+            </summary>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.FloorFilterController.UndoSelectAllDisplayLevels">
+            <summary>
+            Deselects all levels, then reselects the level that was selected at the time that <see cref="M:Esri.ArcGISRuntime.Toolkit.UI.FloorFilterController.SelectAllDisplayLevels"/> was called.
+            </summary>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.FloorFilterController.SelectSingleSite(System.Boolean)">
+            <summary>
+            If there is only one site, and configuration allows, select that site.
+            </summary>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.FloorFilterController.GroundFloorForFacility(Esri.ArcGISRuntime.Mapping.Floor.FloorFacility)">
+            <summary>
+            Gets the ground floor, or the only floor, in the input facility.
+            May return null level; some facilities do not have any levels.
+            </summary>
+        </member>
+        <member name="T:Esri.ArcGISRuntime.Toolkit.UI.NullSelectionLevelMode">
+            <summary>
+            Defines how levels should be displayed when there is no selection.
+            </summary>
+        </member>
+        <member name="T:Esri.ArcGISRuntime.Toolkit.UI.ExternalLevelSelectionMode">
+            <summary>
+            Defines FloorFilter manages the selection of levels in facilities that aren't currently selected.
+            </summary>
+        </member>
+        <member name="T:Esri.ArcGISRuntime.Toolkit.UI.AutomaticSelectionMode">
+            <summary>
+            Defines the selection modes for the FloorFilter.
+            </summary>
+        </member>
+        <member name="F:Esri.ArcGISRuntime.Toolkit.UI.AutomaticSelectionMode.Never">
+            <summary>
+            Never update selection from the observed viewpoint
+            </summary>
+        </member>
+        <member name="F:Esri.ArcGISRuntime.Toolkit.UI.AutomaticSelectionMode.Always">
+            <summary>
+            Always update selection from the observed viewpoint, and clear selection if there is nothing in view
+            </summary>
+        </member>
+        <member name="F:Esri.ArcGISRuntime.Toolkit.UI.AutomaticSelectionMode.AlwaysNonClearing">
+            <summary>
+            Always update selection from the observed viewpoint, but don't clear selection if there is no facility/site/level visible
+            </summary>
+        </member>
+        <member name="T:Esri.ArcGISRuntime.Toolkit.UI.UtilityNetworkTraceToolController">
+            <summary>
+            Internal class used to manage utility network tracing.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityNetworkTraceToolController.Results">
+            <summary>
+            Gets the collection of results.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityNetworkTraceToolController.UtilityNetworks">
+            <summary>
+            Gets the collection of available utility networks.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityNetworkTraceToolController.TraceTypes">
+            <summary>
+            Gets the collection of available trace types for the <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityNetworkTraceToolController.SelectedUtilityNetwork"/>.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityNetworkTraceToolController.StartingPoints">
+            <summary>
+            Gets the collection of starting points. Consumers should use <see cref="M:Esri.ArcGISRuntime.Toolkit.UI.UtilityNetworkTraceToolController.AddStartingPoint(Esri.ArcGISRuntime.Data.ArcGISFeature,Esri.ArcGISRuntime.Geometry.MapPoint)"/> to add to this collection.
+            </summary>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.UtilityNetworkTraceToolController.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Esri.ArcGISRuntime.Toolkit.UI.UtilityNetworkTraceToolController"/> class.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityNetworkTraceToolController.SelectedUtilityNetwork">
+            <summary>
+            Gets or sets the selected utility network. Setting this value will reset the controller then update <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityNetworkTraceToolController.TraceTypes"/>.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityNetworkTraceToolController.SelectedTraceType">
+            <summary>
+            Gets or sets the selected trace type. Setting this value will automatically update the trace name.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityNetworkTraceToolController.Map">
+            <summary>
+            Gets or sets the Map from which <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityNetworkTraceToolController.UtilityNetworks"/> will be populated.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityNetworkTraceToolController.SelectedStartingPoint">
+            <summary>
+            Gets or sets the selected starting point.
+            Selecting a starting point selects the <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.StartingPointModel.SelectionGraphic"/> and updates <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityNetworkTraceToolController.RequestedCallout"/> and <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityNetworkTraceToolController.RequestedViewpoint"/>.
+            </summary>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.UtilityNetworkTraceToolController.TraceAsync">
+            <summary>
+            Runs the trace operation. Results are added to <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityNetworkTraceToolController.Results"/>.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityNetworkTraceToolController.AutoZoomToTraceResults">
+            <summary>
+            Gets or sets a value indicating whether to automatically zoom to trace results.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityNetworkTraceToolController.TraceName">
+            <summary>
+            Gets or sets the name to use to label the next trace result.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityNetworkTraceToolController.StartingPointSymbol">
+            <summary>
+            Gets or sets the starting point symbol.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityNetworkTraceToolController.ResultPointSymbol">
+            <summary>
+            Gets or sets the result point symbol.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityNetworkTraceToolController.ResultLineSymbol">
+            <summary>
+            Gets or sets the result line symbol.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityNetworkTraceToolController.ResultFillSymbol">
+            <summary>
+            Gets or sets the result fill symbol.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityNetworkTraceToolController.ResultColor">
+            <summary>
+            Gets or sets the result color. Setting this value will update <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityNetworkTraceToolController.ResultFillSymbol"/>, <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityNetworkTraceToolController.ResultLineSymbol"/>, and <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityNetworkTraceToolController.ResultPointSymbol"/>
+            if they are of type <see cref="T:Esri.ArcGISRuntime.Symbology.SimpleFillSymbol"/>, <see cref="T:Esri.ArcGISRuntime.Symbology.SimpleLineSymbol"/>, and <see cref="T:Esri.ArcGISRuntime.Symbology.SimpleMarkerSymbol"/> respectively.
+            </summary>
+        </member>
+        <member name="E:Esri.ArcGISRuntime.Toolkit.UI.UtilityNetworkTraceToolController.PropertyChanged">
+            <inheritdoc />
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.UtilityNetworkTraceToolController.System#IDisposable#Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="T:Esri.ArcGISRuntime.Toolkit.UI.UtilityTraceOperationResult">
+            <summary>
+            Encapsulates a utility network trace operation, with all parameters and results, packaged for convenient use in a UI.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityTraceOperationResult.RawResults">
+            <summary>
+            Gets the full results, if any, from the utility trace operation.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityTraceOperationResult.FunctionResults">
+            <summary>
+            Gets the function results, if any, from the utility trace operation.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityTraceOperationResult.Warnings">
+            <summary>
+            Gets the warnings, if any, from the utility trace operation.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityTraceOperationResult.Graphics">
+            <summary>
+            Gets the graphics results, if any, from the utility trace operation.
+            </summary>
+            <remarks>
+            Setting <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityTraceOperationResult.AreGraphicsShown"/> or <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityTraceOperationResult.VisualizationState"/> will add or remove these graphics from <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityTraceOperationResult.ResultOverlay"/>.
+            </remarks>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityTraceOperationResult.ElementResults">
+            <summary>
+            Gets the element results, if any, from the utility trace operation.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityTraceOperationResult.ResultOverlay">
+            <summary>
+            Gets the graphics overlay for visualizing graphics results. This will be populated with the graphics in <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityTraceOperationResult.Graphics"/> by default.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityTraceOperationResult.ElementResultsGrouped">
+            <summary>
+            Gets the utility element results, if any, grouped by asset group.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityTraceOperationResult.Name">
+            <summary>
+            Gets or sets the name for this trace operation. This is use configurable to facilitate differentiation of trace operations.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityTraceOperationResult.Configuration">
+            <summary>
+            Gets the named trace configuration used to create this result.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityTraceOperationResult.StartingPoints">
+            <summary>
+            Gets the starting point inputs to the trace.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityTraceOperationResult.Parameters">
+            <summary>
+            Gets teh parameters used to create this result.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityTraceOperationResult.Features">
+            <summary>
+            Gets the features from the element results, if any.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityTraceOperationResult.Error">
+            <summary>
+            Gets or sets the error part of the trace result, if there is one.
+            </summary>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.UtilityTraceOperationResult.#ctor(Esri.ArcGISRuntime.Toolkit.UI.UtilityNetworkTraceToolController,Esri.ArcGISRuntime.UtilityNetworks.UtilityNamedTraceConfiguration,Esri.ArcGISRuntime.UtilityNetworks.UtilityTraceParameters,System.Collections.Generic.IList{Esri.ArcGISRuntime.Toolkit.UI.StartingPointModel})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Esri.ArcGISRuntime.Toolkit.UI.UtilityTraceOperationResult"/> class.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityTraceOperationResult.GraphicVisualizationColor">
+            <summary>
+            Gets or sets the color used for graphic symbology.
+            </summary>
+            <remarks>
+            Only <see cref="T:Esri.ArcGISRuntime.Symbology.SimpleFillSymbol"/>, <see cref="T:Esri.ArcGISRuntime.Symbology.SimpleMarkerSymbol"/>, and <see cref="T:Esri.ArcGISRuntime.Symbology.SimpleLineSymbol"/> will be affected when setting this property.
+            </remarks>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityTraceOperationResult.AreFeaturesSelected">
+            <summary>
+            Gets or sets a value indicating whether feature results are selected. Setting this value will select or unselect features in their respective feature layers.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityTraceOperationResult.AreGraphicsShown">
+            <summary>
+            Gets or sets a value indicating whether graphic results are shown. Setting this value will add or remove <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityTraceOperationResult.Graphics"/> from <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityTraceOperationResult.ResultOverlay"/>.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityTraceOperationResult.VisualizationState">
+            <summary>
+            Gets or sets a composite value reflecting the combined values of <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityTraceOperationResult.AreGraphicsShown"/> and <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityTraceOperationResult.AreFeaturesSelected"/>.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.UtilityTraceOperationResult.HasAnyResults">
+            <summary>
+            Gets a value indicating whether there are any results from the operation.
+            </summary>
+        </member>
+        <member name="E:Esri.ArcGISRuntime.Toolkit.UI.UtilityTraceOperationResult.PropertyChanged">
+            <inheritdoc />
+        </member>
+        <member name="T:Esri.ArcGISRuntime.Toolkit.UI.StartingPointModel">
+            <summary>
+            Models a starting point used for a utility network trace.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.StartingPointModel.SelectionGraphic">
+            <summary>
+            Gets the graphic representing the starting point, which may have different geometry from the <see cref="T:Esri.ArcGISRuntime.UtilityNetworks.UtilityElement"/>.
+            </summary>
+            <remarks>
+            In the case of line elements, the starting point will be a point on the line. Setting <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.StartingPointModel.FractionAlongEdge"/> will change the graphic's geometry.
+            </remarks>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.StartingPointModel.ZoomToExtent">
+            <summary>
+            Gets the extent used for zooming to the starting point.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.StartingPointModel.Symbol">
+            <summary>
+            Gets the symbol used to visually identify the starting point in a list.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.StartingPointModel.StartingPoint">
+            <summary>
+            Gets the underlying utility element.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.StartingPointModel.PopupManager">
+            <summary>
+            Gets the popup manager for the starting point.
+            </summary>
+            <remarks>
+            The popup can be used to inspect and differentiate starting points.
+            </remarks>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.StartingPointModel.FractionAlongEdge">
+            <summary>
+            Gets or sets the starting point's location along a line element. Setting this value will update the geometry of <see cref="P:Esri.ArcGISRuntime.Toolkit.UI.StartingPointModel.SelectionGraphic"/>.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.StartingPointModel.TerminalPickerVisible">
+            <summary>
+            Gets a value indicating whether users should be allowed to specify a terminal for the starting point.
+            </summary>
+        </member>
+        <member name="P:Esri.ArcGISRuntime.Toolkit.UI.StartingPointModel.FractionSliderVisible">
+            <summary>
+            Gets a value indicating whether users should be allowed to specify a position along a line feature for the starting point.
+            </summary>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.UI.StartingPointModel.Equals(Esri.ArcGISRuntime.Toolkit.UI.StartingPointModel)">
+            <inheritdoc />
+            <remarks>
+            This is used internally to enable appropriate warnings for duplicate trace operations.
+            </remarks>
+        </member>
+        <member name="T:Esri.ArcGISRuntime.Toolkit.Internal.StringExtensions">
+            <summary>
+            Helper class for providing common cross-platform string manipulations.
+            </summary>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.Internal.StringExtensions.ToPlainText(System.String)">
+            <summary>
+            Strips-out html code from text.
+            </summary>
+            <param name="htmlText">Text that may contain html code.</param>
+            <returns>Plain text after html code is removed.</returns>
+        </member>
+        <member name="T:Esri.ArcGISRuntime.Toolkit.Internal.DelegateCommand">
+            <summary>
+            Simple command implementation.
+            </summary>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.Internal.DelegateCommand.#ctor(System.Action)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Esri.ArcGISRuntime.Toolkit.Internal.DelegateCommand"/> class.
+            </summary>
+        </member>
+        <member name="E:Esri.ArcGISRuntime.Toolkit.Internal.DelegateCommand.CanExecuteChanged">
+            <inheritdoc/>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.Internal.DelegateCommand.CanExecute(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Esri.ArcGISRuntime.Toolkit.Internal.DelegateCommand.Execute(System.Object)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>
